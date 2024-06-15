@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="fontawesome-free-6.5.2-web/css/all.css">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta charset="UTF-8" />
+<title>DanielKpadobi</title>
+<style type="text/css">
+.container{
+height:200vh;
+width:100%;
+border:1px solid black;
+display:none;
+background:#555;
+}
+.top{
+width:98%;
+height:10vh;
+display:flex;
+padding:5px;
+box-shadow:0px 1px 2px 0.2px grey;
+}
+#opsbar{
+position:relative;
+transform: scale(1.3);
+top:40%;
+left:5%;
+}
+h2{
+transform: translateX(70%);
+margin-top:10px;
+
+}
+.frame{
+position:absolute;
+top:20%;
+left:26%;
+border:3px solid rgb(90,255,0);
+border-radius: 90px;
+padding:10px 10px 5px 10px;
+align-items:center;
+}
+.dank{
+border-radius:80px;
+
+}
+.sidebar{
+height:100vh;
+position:fixed;
+background:linear-gradient(15deg,#00ff00,#111);
+z-index: 1;
+width:0%;
+left:0;
+top:0;
+overflow:auto;
+transition:2s;
+}
+#cancel{
+position:relative;
+color:#fff;
+margin-top:30px;
+left:80%;
+transform:scale(1.5);
+}
+.sbar_{
+padding:20px 50px;
+color:#fff;
+transition:2s;
+}
+.sbar_::first-letter{
+color:green;
+font-size: 1.2em;
+font-weight:bold;
+}
+.sbar_:active{
+background: linear-gradient(15deg,#00ff00,#111);
+}
+.diary{
+background:linear-gradient(10deg,#00ff00,#fff);
+width:80%;
+position:absolute;
+left:20px;
+padding:10px;
+padding-left:30px;
+top: 60vh;
+font-family:;
+border-radius:0px 20px 20px 20px;
+}
+.food_container{
+display:flex;
+}
+.food_container .remv{
+display:none;
+}
+.food1{
+border:1px solid black;
+padding: 10px;
+border-radius:5px;
+height:50vh;
+width:80%;
+position:absolute;
+top:15%;
+left:20px;
+background:linear-gradient(60deg,#000,#fff);
+box-shadow:1px 2px 2px 0.2px grey;
+overflow:auto;
+}
+.food2{
+border:1px solid black;
+padding: 10px;
+border-radius:5px;
+height:50vh;
+width:80%;
+position:absolute;
+top:75%;
+overflow:auto;
+left:20px;
+background:linear-gradient(50deg,#000,#fff);
+box-shadow:1px 2px 2px 0.2px grey;
+}
+header{
+width: 90%;
+padding:20px 20px 10px;
+box-shadow:0 1px 2px 0.1px grey;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="sidebar">
+	<i id="cancel" class="fa fa-remove"></i>
+	<div id="menu" class="sbar_">Menu</div>
+	<div class="sbar_">Setting</div>
+	<div class="sbar_">Contact</div>
+</div>
+<div class="top">
+	<i class="fa fa-list" id="opsbar"></i><h2>Business<i class="fa fa-dumpster"></i></h2>
+</div>
+	<div class="frame">
+		<div class="photo_frame">
+	
+			<img src="dank.jpg" class="dank" height="150" width="150"/>
+		</div>
+		</div>
+	<div class="diary">
+	<h4>About Me</h4>
+		<p>I am Daniel, popularly known as Nwanioma, or Nne,I am a content Creator, By content, I mean soup contents, like your Okporoko, okra and other soup ingredients, I sell fishes both dried and fresh fish.</p>
+		<p>This is my official Page, I sell some goods online, you can check the menu to see some of my contents which i created</p>
+		
+	</div>
+	</div>
+</div>
+
+<!--Fish page-->
+<div class="food_container remv">
+<header><i id="back" class="fa fa-arrow-left"></i></header>
+	<div class="food1">
+		<img src="stock.jpg" width="200" height="200"/>
+		<div class="food1_list">
+		<label>
+		<input type="radio" class="choose1"/>
+		</label>
+		</div>
+	</div>
+	<div class="food2">
+		<img src="ogbono.jpg"  height="200" width="200"/>
+	
+	</div>
+</div>
+<script type="text/javascript">
+let foodpage = document.querySelector(".food_container");
+const back = document.getElementById("back");
+const sidebar = document.querySelector(".sidebar");
+let rmvsbar = document.getElementById("cancel");
+let opsbar = document.getElementById("opsbar");
+let fullPage = document.querySelector(".container");
+let menu = document.getElementById("menu");
+back.onclick=()=>{
+//foodpage.classList.remove("remv");
+foodpage.style.display="none";
+fullPage.style.display="block";
+}
+menu.addEventListener("click",()=>{
+	fullPage.style.display="none";
+	foodpage.style.display="flex";
+});
+opsbar.onclick=()=>{
+sidebar.style.width="70%";
+}
+cancel.onclick=()=>{
+	sidebar.style.width="0%";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*let text = document.querySelector("button");
+let btn = document.getElementById("btn");
+btn.onclick=()=>{
+	let httpReq = new XMLHttpRequest();
+	httpReq.onreadystatechange = function(){
+		if(httpReq.status ===200 && httpReq.readystate===4){
+			text.textContent = responseText;
+		}else{
+		alert("Failed")
+		}
+	
+	}
+	httpReq.open("GET","https://www.wikihow.com")
+	httpReq.send();
+}*/
+
+</script>
+</body>
+</html>
